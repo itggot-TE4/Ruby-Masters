@@ -2,9 +2,14 @@
     h1 What's Their Face
     form action="/user/login" method="post"
         label for="username" Username
-        input name="username" id="username" placeholder="Username"
-
+        .input_field
+            input name="username" id="username" placeholder="Username"
+            i.material-icons onclick="clear_field(this)"clear
         label for="password" Password
-        input name="password" id="password" placeholder="Password"
+        .input_field
+            input name="password" type="password" id="password" placeholder="Password"
+            i.material-icons onclick="clear_field(this)" clear
 
+        / label for="password" Password
+        / input name="password" id="password" type="password" placeholder="Password"
         button type="submit" Login
