@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,IAAI,CAAA;EACA,gBAAgB,EAAE,KAAK;CAW1B;;AAZD,AAGI,IAHA,CAGA,EAAE,CAAA;EACE,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EACb,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EAEnB,KAAK,EAAE,UAAU;CACpB",
+    "sources": [
+        "pluggy.scss"
+    ],
+    "names": [],
+    "file": "pluggy.css"
+}
