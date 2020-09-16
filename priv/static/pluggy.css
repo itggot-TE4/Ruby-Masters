@@ -63,4 +63,8 @@ body {
 .wrapper.user_login form input::placeholder {
   color: blue;
 }
+
+.wrapper.user_login form button {
+  background-color: lightblue;
+}
 /*# sourceMappingURL=pluggy.css.map */
