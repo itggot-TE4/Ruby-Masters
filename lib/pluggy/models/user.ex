@@ -1,5 +1,5 @@
 defmodule Pluggy.User do
-  defstruct(id: nil, username: "")
+  defstruct(id: nil, username: "", status: "", pwd: "")
 
   alias Pluggy.User
 
@@ -10,7 +10,12 @@ defmodule Pluggy.User do
     |> to_struct
   end
 
-  def to_struct([[id, username]]) do
-    %User{id: id, username: username}
+  def get_by_username(username) do
+    Postgrex.query!(DB, "SELECT * FROM users WHERE name = $1", [username], pool: DBConnection.ConnectionPool).rows
+    |> to_struct
+  end
+
+  def to_struct([[id, username, pwd, status]]) do
+    %User{id: id, username: username, pwd: pwd, status: status}
   end
 end

@@ -39,7 +39,18 @@ defmodule Pluggy.UserController do
 
   def login(conn, params) do
 
+    username = params["username"]
+    pwd = params["password"]
 
+    user = User.get_by_username(username)
+    
+    case pwd do
+
+      user.pwd -> redirect(conn, "/user/login")
+
+      _ -> redirect(conn, "/user/login")
+
+    end
 
   end
 
@@ -56,6 +67,6 @@ defmodule Pluggy.UserController do
   #  	# redirect(conn, "/fruits")
   # end
 
-  # defp redirect(conn, url),
-  #   do: Plug.Conn.put_resp_header(conn, "location", url) |> send_resp(303, "")
+   defp redirect(conn, url),
+     do: Plug.Conn.put_resp_header(conn, "location", url) |> send_resp(303, "")
 end
