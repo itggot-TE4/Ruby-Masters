@@ -1,13 +1,42 @@
+
+
 body{
-    background-color: brown;
+    margin: 0;
+    padding: 0;
+    top: 0;
+}
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+}
+
+.wrapper.user_login{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
     h1{
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        color: lightcoral;
+        width: fit-content;
+        height: fit-content;
+        color: lightblue;
     }
+
+    form{
+        width: 50vw;
+        input{
+            width: 100%;
+            height: 50px;
+            background-color: lightblue;
+            border-radius: 5px;
+            border: solid blue 2px;
+        }
+    
+        input::placeholder{
+            color: blue;
+        }
+    }
+
 }
