@@ -1,10 +1,16 @@
 body {
-  background-color: brown;
+  margin: 0;
+  padding: 0;
+  top: 0;
 }
 
-body h1 {
+.wrapper {
   width: 100vw;
   height: 100vh;
+}
+
+.wrapper.user_login {
+  background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,6 +20,47 @@ body h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: lightcoral;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper.user_login h1 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  color: lightblue;
+}
+
+.wrapper.user_login form {
+  width: 50vw;
+}
+
+.wrapper.user_login form input {
+  width: 100%;
+  height: 50px;
+  background-color: lightblue;
+  border-radius: 5px;
+  border: solid blue 2px;
+}
+
+.wrapper.user_login form input::-webkit-input-placeholder {
+  color: blue;
+}
+
+.wrapper.user_login form input:-ms-input-placeholder {
+  color: blue;
+}
+
+.wrapper.user_login form input::-ms-input-placeholder {
+  color: blue;
+}
+
+.wrapper.user_login form input::placeholder {
+  color: blue;
 }
 /*# sourceMappingURL=pluggy.css.map */

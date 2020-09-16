@@ -1,6 +1,13 @@
 defmodule Pluggy.UserController do
   # import Pluggy.Template, only: [render: 2] #det här exemplet renderar inga templates
   import Plug.Conn, only: [send_resp: 3]
+  require IEx
+
+  alias Pluggy.Fruit
+  alias Pluggy.User
+  import Pluggy.Template, only: [render: 2, srender: 2]
+  import Plug.Conn, only: [send_resp: 3]
+
 
   # def login(conn, params) do
   #   username = params["username"]
@@ -49,6 +56,6 @@ defmodule Pluggy.UserController do
   #  	# redirect(conn, "/fruits")
   # end
 
-  defp redirect(conn, url),
-    do: Plug.Conn.put_resp_header(conn, "location", url) |> send_resp(303, "")
+  # defp redirect(conn, url),
+  #   do: Plug.Conn.put_resp_header(conn, "location", url) |> send_resp(303, "")
 end

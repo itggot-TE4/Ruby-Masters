@@ -6,7 +6,7 @@ defmodule Pluggy.Router do
   alias Pluggy.FruitController
   alias Pluggy.UserController
   alias Pluggy.FaceController
-
+  import Pluggy.Template, only: [render: 2, srender: 2]
 
 
   plug(Plug.Static, at: "/", from: :pluggy)
@@ -44,7 +44,8 @@ defmodule Pluggy.Router do
   # post("/users/logout", do: UserController.logout(conn))
 
   get("/", do: FaceController.index(conn))
-  get("/user/login", do: UserController.login(conn))
+  get("/user/login", do: send_resp(conn, 200, srender("users/new", [])))
+  post("/user/loigin", do: UserController.login(conn, conn.body_params))
 
   post("/user/login", do: UserController.login(conn, conn.body_params))
 
