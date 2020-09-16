@@ -46,6 +46,8 @@ defmodule Pluggy.Router do
   get("/", do: FaceController.index(conn))
   get("/user/login", do: UserController.login(conn))
 
+  post("/user/login", do: UserController.login(conn, conn.body_params))
+
   match _ do
     send_resp(conn, 404, "oops")
   end
