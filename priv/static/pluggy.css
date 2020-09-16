@@ -10,7 +10,7 @@ body {
 }
 
 .wrapper.user_login {
-  background-color: white;
+  background-color: #f1f1e8;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -33,38 +33,82 @@ body {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  color: lightblue;
+  color: #81b214;
 }
 
 .wrapper.user_login form {
   width: 50vw;
 }
 
-.wrapper.user_login form input {
-  width: 100%;
+.wrapper.user_login form .input_field:nth-of-type(1) {
+  margin-bottom: 3vh;
+}
+
+.wrapper.user_login form .input_field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 50px;
-  background-color: lightblue;
-  border-radius: 5px;
-  border: solid blue 2px;
 }
 
-.wrapper.user_login form input::-webkit-input-placeholder {
-  color: blue;
+.wrapper.user_login form .input_field i.material-icons {
+  height: 100%;
+  width: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #bfdcae;
+  color: white;
 }
 
-.wrapper.user_login form input:-ms-input-placeholder {
-  color: blue;
+.wrapper.user_login form .input_field input:focus {
+  outline: none;
 }
 
-.wrapper.user_login form input::-ms-input-placeholder {
-  color: blue;
+.wrapper.user_login form .input_field input {
+  width: calc(100% - 15px);
+  height: 100%;
+  background-color: #bfdcae;
+  border: none;
+  padding: 0 0 0 15px;
 }
 
-.wrapper.user_login form input::placeholder {
-  color: blue;
+.wrapper.user_login form .input_field input::-webkit-input-placeholder {
+  color: white;
+}
+
+.wrapper.user_login form .input_field input:-ms-input-placeholder {
+  color: white;
+}
+
+.wrapper.user_login form .input_field input::-ms-input-placeholder {
+  color: white;
+}
+
+.wrapper.user_login form .input_field input::placeholder {
+  color: white;
 }
 
 .wrapper.user_login form button {
-  background-color: lightblue;
+  background-color: #81b214;
+  width: 75%;
+  margin: 0 12.5% 0 12.5%;
+  margin-top: 2.5vh;
+  height: 5vh;
+  border-radius: 5px;
+  font-family: "Roboto", cursive;
+  font-size: 2em;
 }
 /*# sourceMappingURL=pluggy.css.map */
