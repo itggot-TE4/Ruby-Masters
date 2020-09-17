@@ -47,7 +47,7 @@ defmodule Pluggy.Router do
   get("/user/login", do: send_resp(conn, 200, srender("users/new", conn: conn)))
   post("/user/login", do: UserController.login(conn, conn.body_params))
   post("/user/logout", do: UserController.logout(conn))
-
+  get("/admin/groups", do: send_resp(conn, 200, srender("admin/groups", [])))
   match _ do
     send_resp(conn, 404, "oops")
   end

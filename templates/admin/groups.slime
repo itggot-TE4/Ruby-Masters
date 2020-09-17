@@ -1,0 +1,27 @@
+.wrapper.admin_groups
+    header
+        h1 What's their face
+        i.material-icons person
+        .name_box
+            h3 Namn Namnsson
+        .user_action
+            h3 Logout
+    main.admin_groups
+        h1.title Skolnamn
+        h1.groups Groups
+        main.specified_groups
+            aside.group
+                h2 Gruppnamn
+                .lower
+                    p Edit
+                    p Remove
+            aside.group
+                h2 Gruppnamn
+                .lower
+                    p Edit
+                    p Remove
+            aside.group
+                h2 Gruppnamn
+                .lower
+                    p Edit
+                    p Remove
