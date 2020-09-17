@@ -59,5 +59,5 @@ defmodule Mix.Tasks.Seed do
 
 end
 
-
+#join på skola, skol_user_handler och schools: SELECT * FROM user_school_handler AS a INNER JOIN schools AS b ON b.id = a.school_id INNER JOIN users AS u ON a.user_id = u.id;
 #Dubble join "SELECT * FROM schools AS a INNER JOIN user_school_handler AS b ON a.id = b.school_id INNER JOIN users AS c ON c.id = a.id"
