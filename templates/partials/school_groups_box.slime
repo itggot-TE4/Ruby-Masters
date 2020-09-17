@@ -1,0 +1,5 @@
+aside.group
+    h2 Gruppnamn
+    .lower
+        p Edit
+        p Remove

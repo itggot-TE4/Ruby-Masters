@@ -6,6 +6,7 @@ defmodule Pluggy.Router do
   alias Pluggy.FruitController
   alias Pluggy.UserController
   alias Pluggy.FaceController
+  alias Pluggy.SchoolController
   import Pluggy.Template, only: [render: 2, srender: 2]
 
 
@@ -47,7 +48,9 @@ defmodule Pluggy.Router do
   get("/user/login", do: send_resp(conn, 200, srender("users/new", conn: conn)))
   post("/user/login", do: UserController.login(conn, conn.body_params))
   post("/user/logout", do: UserController.logout(conn))
-  get("/admin/groups", do: send_resp(conn, 200, srender("admin/groups", [])))
+  get("/admin/groups", do: send_resp(conn, 200, srender("admin/groups", [header: srender("partials/header", []), group_box: srender("partials/school_groups_box", [])])))
+  post("/school/new", do: SchoolController.create(conn, conn.body_params))
+
   match _ do
     send_resp(conn, 404, "oops")
   end

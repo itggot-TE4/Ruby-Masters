@@ -8,15 +8,15 @@ defmodule Pluggy.FaceController do
 
   def index(conn) do
     # get user if logged in
-    session_user = conn.private.plug_session["user_id"]
+    session_user = conn.private.plug_session["user"]
 
 
-    # case session_user do
-    #   nil -> redirect(conn, "/user/login")
-    #   _ -> nil
-    # end
+    case session_user do
+      nil -> redirect(conn, "/user/login")
+      _ -> nil
+    end
 
-    send_resp(conn, 200, srender("whats_their_face/index", []))
+    send_resp(conn, 200, srender("whats_their_face/index", [header: srender("partials/header", username: conn.private.plug_session["user"].username), school_box: srender("partials/school_groups_box", [])]))
   end
 
   defp redirect(conn, url),

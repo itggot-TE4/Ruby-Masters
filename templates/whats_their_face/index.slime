@@ -1,20 +1,22 @@
 
 
-form action="/user/logout" method="post"
-    button type="submit" logout 
+/ form action="/user/logout" method="post"
+/     button type="submit" logout 
 
 
 
 
-h1 Schools
-
-.wrapper.admin
-
-    div class="school"
-
-        h2 NTI
-
-        button type="submit" Edit 
-        button type="submit" Remove 
-
+.wrapper.general
+    = header
+    main.general
+        main.general
+            h1.title Schools
+            main.specified_groups
+                = school_box
+                aside.group
+                    h1 onclick="show_popup()" NEW
+main.school_popup.hidden
+    form action="/school/new" method="post"
+        input placeholder="School name" name="name"
+        button type="submit" Add new school
 

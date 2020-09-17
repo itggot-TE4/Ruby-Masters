@@ -44,7 +44,7 @@ defmodule Pluggy.UserController do
     user = User.get_by_username(username)
 
     if user.pwd == pwd do
-      Plug.Conn.put_session(conn, :user_id, user.id) |> redirect("/")
+      Plug.Conn.put_session(conn, :user, user) |> redirect("/")
     else
       Plug.Conn.put_session(conn, :incorrect_login_info, true) |> redirect("/user/login")
     end

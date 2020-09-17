@@ -133,7 +133,7 @@ body {
   margin-bottom: 0px;
 }
 
-.wrapper.admin_groups main.admin_groups {
+.wrapper.general main.general {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -147,7 +147,7 @@ body {
   height: 90vh;
 }
 
-.wrapper.admin_groups main.admin_groups h1 {
+.wrapper.general main.general h1 {
   margin: 0;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -159,17 +159,17 @@ body {
   color: #81b214;
 }
 
-.wrapper.admin_groups main.admin_groups h1.title {
+.wrapper.general main.general h1.title {
   margin: 5vh 0 2.5vh 0;
   font-size: 2em;
 }
 
-.wrapper.admin_groups main.admin_groups h1.groups {
+.wrapper.general main.general h1.groups {
   margin: 0 0 2.5vh 0;
   font-size: 1.5em;
 }
 
-.wrapper.admin_groups main.admin_groups main.specified_groups {
+.wrapper.general main.general main.specified_groups {
   width: 80vw;
   margin: 0 10vw 0 10vw;
   height: 100%;
@@ -180,9 +180,9 @@ body {
       flex-wrap: wrap;
 }
 
-.wrapper.admin_groups main.admin_groups main.specified_groups aside.group {
-  width: 15vw;
-  height: 15vw;
+.wrapper.general main.general main.specified_groups aside.group {
+  width: 200px;
+  height: 200px;
   background-color: #bfdcae;
   margin: 2vw;
   display: -ms-grid;
@@ -192,7 +192,25 @@ body {
   font-family: "Roboto", cursive;
 }
 
-.wrapper.admin_groups main.admin_groups main.specified_groups aside.group h2 {
+.wrapper.general main.general main.specified_groups aside.group h1 {
+  grid-row: span 2;
+  height: 100%;
+  width: 100%;
+  color: white;
+  font-size: 2em;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper.general main.general main.specified_groups aside.group h2 {
   height: 100%;
   width: 100%;
   display: -webkit-box;
@@ -208,7 +226,7 @@ body {
   color: white;
 }
 
-.wrapper.admin_groups main.admin_groups main.specified_groups aside.group .lower {
+.wrapper.general main.general main.specified_groups aside.group .lower {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -225,7 +243,7 @@ body {
   background-color: #81b214;
 }
 
-.wrapper.admin_groups main.admin_groups main.specified_groups aside.group .lower p {
+.wrapper.general main.general main.specified_groups aside.group .lower p {
   width: 50%;
   height: 100%;
   display: -webkit-box;
@@ -300,5 +318,52 @@ header .user_action h3 {
 header .name_box {
   background-color: #bfdcae;
   color: white;
+}
+
+main.school_popup {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.25);
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main.school_popup form {
+  width: 20%;
+  height: 20%;
+  background-color: white;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.blurred {
+  -webkit-filter: blur(1px);
+          filter: blur(1px);
+}
+
+.hidden {
+  visibility: hidden !important;
+  display: none !important;
 }
 /*# sourceMappingURL=pluggy.css.map */
