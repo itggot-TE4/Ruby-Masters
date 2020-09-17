@@ -25,34 +25,34 @@ defmodule Mix.Tasks.Seed do
     Postgrex.query!(DB, "Create TABLE users (id SERIAL, name VARCHAR(255) NOT NULL UNIQUE, pwd VARCHAR(255) NOT NULL, status VARCHAR(255) NOT NULL)", [], pool: DBConnection.ConnectionPool)
     Postgrex.query!(DB, "Create TABLE groups (id SERIAL, name VARCHAR(255) NOT NULL, school_id INTEGER NOT NULL )", [], pool: DBConnection.ConnectionPool)
     Postgrex.query!(DB, "Create TABLE schools (id SERIAL, name VARCHAR(255) NOT NULL)", [], pool: DBConnection.ConnectionPool)
-    Postgrex.query!(DB, "Create TABLE students (id SERIAL, name VARCHAR(255) NOT NULL, img VARCHAR(255))", [], pool: DBConnection.ConnectionPool)    
-    
-    Postgrex.query!(DB, "Create TABLE student_group_handler (student_id INTEGER NOT NULL, group_id INTEGER NOT NULL)", [], pool: DBConnection.ConnectionPool)    
-    Postgrex.query!(DB, "Create TABLE user_school_handler (user_id INTEGER NOT NULL, school_id INTEGER NOT NULL)", [], pool: DBConnection.ConnectionPool)    
+    Postgrex.query!(DB, "Create TABLE students (id SERIAL, name VARCHAR(255) NOT NULL, img VARCHAR(255))", [], pool: DBConnection.ConnectionPool)
+
+    Postgrex.query!(DB, "Create TABLE student_group_handler (student_id INTEGER NOT NULL, group_id INTEGER NOT NULL)", [], pool: DBConnection.ConnectionPool)
+    Postgrex.query!(DB, "Create TABLE user_school_handler (user_id INTEGER NOT NULL, school_id INTEGER NOT NULL)", [], pool: DBConnection.ConnectionPool)
   end
 
   defp seed_data() do
     IO.puts("Seeding data")
 
     Postgrex.query!(DB, "INSERT INTO users(name, status, pwd) VALUES($1, $2, $3)", ["Admin", "admin", "123"], pool: DBConnection.ConnectionPool)
-    Postgrex.query!(DB, "INSERT INTO users(name, status, pwd) VALUES($1, $2, $3)", ["Filip", "teacher", "hot_moms76"], pool: DBConnection.ConnectionPool)
+    Postgrex.query!(DB, "INSERT INTO users(name, status, pwd) VALUES($1, $2, $3)", ["Filip", "teacher", "hej"], pool: DBConnection.ConnectionPool)
     Postgrex.query!(DB, "INSERT INTO users(name, status, pwd) VALUES($1, $2, $3)", ["Alex", "teacher", "hej"], pool: DBConnection.ConnectionPool)
 
     Postgrex.query!(DB, "INSERT INTO groups(name, school_id) VALUES($1, $2)", ["TE4", 1], pool: DBConnection.ConnectionPool)
     Postgrex.query!(DB, "INSERT INTO groups(name, school_id) VALUES($1, $2)", ["TE3", 1], pool: DBConnection.ConnectionPool)
     Postgrex.query!(DB, "INSERT INTO groups(name, school_id) VALUES($1, $2)", ["TE2", 1], pool: DBConnection.ConnectionPool)
     Postgrex.query!(DB, "INSERT INTO groups(name, school_id) VALUES($1, $2)", ["TE17K", 2], pool: DBConnection.ConnectionPool)
-    
+
     Postgrex.query!(DB, "INSERT INTO schools(name) VALUES($1)", ["NTI"], pool: DBConnection.ConnectionPool)
     Postgrex.query!(DB, "INSERT INTO schools(name) VALUES($1)", ["Elof"], pool: DBConnection.ConnectionPool)
-    
+
     Postgrex.query!(DB, "INSERT INTO students(name, img) VALUES($1, $2)", ["Steffe Skarsgård", "steffe.img"], pool: DBConnection.ConnectionPool)
     Postgrex.query!(DB, "INSERT INTO students(name, img) VALUES($1, $2)", ["Brad Pitt", "brad.img"], pool: DBConnection.ConnectionPool)
-    
-    
+
+
     Postgrex.query!(DB, "INSERT INTO student_group_handler(student_id, group_id) VALUES($1, $2)", [1, 1], pool: DBConnection.ConnectionPool)
     Postgrex.query!(DB, "INSERT INTO student_group_handler(student_id, group_id) VALUES($1, $2)", [2, 1], pool: DBConnection.ConnectionPool)
-    
+
     Postgrex.query!(DB, "INSERT INTO user_school_handler(user_id, school_id) VALUES($1, $2)", [2, 1], pool: DBConnection.ConnectionPool)
     Postgrex.query!(DB, "INSERT INTO user_school_handler(user_id, school_id) VALUES($1, $2)", [3, 2], pool: DBConnection.ConnectionPool)
   end
