@@ -11,10 +11,10 @@ defmodule Pluggy.FaceController do
     session_user = conn.private.plug_session["user_id"]
 
 
-    case session_user do
-      nil -> redirect(conn, "/user/login")
-      _ -> nil
-    end
+    # case session_user do
+    #   nil -> redirect(conn, "/user/login")
+    #   _ -> nil
+    # end
 
     send_resp(conn, 200, srender("whats_their_face/index", []))
   end

@@ -111,4 +111,25 @@ body {
   font-family: "Roboto", cursive;
   font-size: 2em;
 }
+
+.wrapper.admin {
+  width: 100%;
+  height: 400px;
+  background-color: #81b214;
+}
+
+.wrapper.admin .school {
+  width: 200px;
+  height: 100px;
+  background-color: red;
+  margin-left: 400px;
+}
+
+.wrapper.admin .school button {
+  background-color: blue;
+  border: 0px;
+  width: 50%;
+  height: 33%;
+  margin-bottom: 0px;
+}
 /*# sourceMappingURL=pluggy.css.map */
