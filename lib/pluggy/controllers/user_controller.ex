@@ -41,23 +41,20 @@ defmodule Pluggy.UserController do
 
     username = params["username"]
     pwd = params["password"]
-
     user = User.get_by_username(username)
-    
-    case pwd do
 
-      user.pwd -> redirect(conn, "/user/login")
-
-      _ -> redirect(conn, "/user/login")
-
+    if user.pwd == pwd do
+      Plug.Conn.put_session(conn, :user_id, user.id) |> redirect("/")
+    else
+      Plug.Conn.put_session(conn, :incorrect_login_info, true) |> redirect("/user/login")
     end
 
   end
 
-  # def logout(conn) do
-  #   Plug.Conn.configure_session(conn, drop: true) #tömmer sessionen
-  #   |> redirect("/fruits")
-  # end
+  def logout(conn) do
+    Plug.Conn.configure_session(conn, drop: true) #tömmer sessionen
+    |> redirect("/")
+  end
 
   # def create(conn, params) do
   # 	#pseudocode
@@ -67,6 +64,6 @@ defmodule Pluggy.UserController do
   #  	# redirect(conn, "/fruits")
   # end
 
-   defp redirect(conn, url),
+   def redirect(conn, url),
      do: Plug.Conn.put_resp_header(conn, "location", url) |> send_resp(303, "")
 end
