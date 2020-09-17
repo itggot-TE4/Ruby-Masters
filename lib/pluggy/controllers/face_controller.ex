@@ -10,6 +10,7 @@ defmodule Pluggy.FaceController do
     # get user if logged in
     session_user = conn.private.plug_session["user_id"]
 
+
     case session_user do
       nil -> redirect(conn, "/user/login")
       _ -> nil
