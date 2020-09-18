@@ -51,15 +51,12 @@ defmodule Pluggy.Router do
   post("/user/logout", do: UserController.logout(conn))
 
   get("/school/index", do: SchoolController.show(conn))
-  
-  get("/admin/groups", do: send_resp(conn, 200, srender("admin/groups", [
-  header: srender("partials/header", [username: conn.private.plug_session["user"].username]),
-  group_box: srender("partials/school_groups_box", []),
-  teacher_group: srender("partials/teacher_group", [])
-  ])))
 
+  get("/admin/groups", do: send_resp(conn, 200, srender("admin/schools", [username: conn.private.plug_session["user"].username, name: "123"])))
   post("/school/new", do: SchoolController.create(conn, conn.body_params))
-  get("/school/class", do: send_resp(conn, 200, srender("partials/teacher_group", conn: conn)))
+  get("/teacher/class", do: send_resp(conn, 200, srender("partials/teacher_group", conn: conn)))
+  get("/class/id", do: send_resp(conn, 200, srender("partials/admin_group", conn: conn)))
+
 
 
 

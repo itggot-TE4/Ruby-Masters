@@ -1,8 +1,0 @@
-.wrapper.general
-    = header
-    main.general
-        h1.title Skolnamn
-        h1.groups Groups
-        main.specified_groups
-          = group_box
-          = teacher_group
