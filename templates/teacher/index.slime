@@ -1,0 +1,10 @@
+.wrapper.general
+    = slime.("partials/header", [username: username])
+    main.general
+        main.general
+            h1.title SKOLNAMN
+            main.specified_groups
+                = for school <- schools do
+                    = slime.("partials/school_groups_box", [name: school.name])
+                aside.group
+                    h1 NEW

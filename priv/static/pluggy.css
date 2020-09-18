@@ -180,19 +180,7 @@ body {
       flex-wrap: wrap;
 }
 
-.wrapper.general main.general main.specified_groups aside.group {
-  width: 200px;
-  height: 200px;
-  background-color: #bfdcae;
-  margin: 2vw;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 75% 25%;
-      grid-template-rows: 75% 25%;
-  font-family: "Roboto", cursive;
-}
-
-.wrapper.general main.general main.specified_groups aside.group h1 {
+.wrapper.general main.general main.specified_groups aside.group h1, .wrapper.general main.general main.specified_groups aside.teacher_group h1 {
   grid-row: span 2;
   height: 100%;
   width: 100%;
@@ -210,7 +198,7 @@ body {
           align-items: center;
 }
 
-.wrapper.general main.general main.specified_groups aside.group h2 {
+.wrapper.general main.general main.specified_groups aside.group h2, .wrapper.general main.general main.specified_groups aside.teacher_group h2 {
   height: 100%;
   width: 100%;
   display: -webkit-box;
@@ -226,7 +214,7 @@ body {
   color: white;
 }
 
-.wrapper.general main.general main.specified_groups aside.group .lower {
+.wrapper.general main.general main.specified_groups aside.group .lower, .wrapper.general main.general main.specified_groups aside.teacher_group .lower {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -243,7 +231,7 @@ body {
   background-color: #81b214;
 }
 
-.wrapper.general main.general main.specified_groups aside.group .lower p {
+.wrapper.general main.general main.specified_groups aside.group .lower p, .wrapper.general main.general main.specified_groups aside.teacher_group .lower p {
   width: 50%;
   height: 100%;
   display: -webkit-box;
@@ -256,6 +244,30 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: white;
+}
+
+.wrapper.general main.general main.specified_groups aside.group {
+  width: 200px;
+  height: 200px;
+  background-color: #bfdcae;
+  margin: 2vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 75% 25%;
+      grid-template-rows: 75% 25%;
+  font-family: "Roboto", cursive;
+}
+
+.wrapper.general main.general main.specified_groups aside.teacher_group {
+  width: 200px;
+  height: 200px;
+  background-color: #bfdcae;
+  margin: 2vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 75% 25%;
+      grid-template-rows: 75% 25%;
+  font-family: "Roboto", cursive;
 }
 
 header {

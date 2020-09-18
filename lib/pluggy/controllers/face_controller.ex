@@ -3,6 +3,7 @@ defmodule Pluggy.FaceController do
 
   alias Pluggy.Fruit
   alias Pluggy.User
+  alias Pluggy.School
   import Pluggy.Template, only: [render: 2, srender: 2]
   import Plug.Conn, only: [send_resp: 3]
 
@@ -15,9 +16,15 @@ defmodule Pluggy.FaceController do
       nil -> redirect(conn, "/user/login")
       _ -> nil
     end
-    teachers = User.get_teachers()
-    IO.inspect teachers
-    send_resp(conn, 200, srender("whats_their_face/index", [header: srender("partials/header", username: conn.private.plug_session["user"].username), school_box: srender("partials/school_groups_box", [name: "Steffe2"])]))
+
+    if session_user.status == "admin" do
+      teachers = User.get_teachers()
+      IO.inspect teachers
+      send_resp(conn, 200, srender("admin/index", [header: srender("partials/header", username: conn.private.plug_session["user"].username), school_box: srender("partials/school_groups_box", [name: "School"])]))
+    else
+      schools = School.get_from_teacher(session_user.id)
+      send_resp(conn, 200, srender("teacher/index", [schools: schools, username: conn.private.plug_session["user"].username]))
+    end
   end
 
   defp redirect(conn, url),
