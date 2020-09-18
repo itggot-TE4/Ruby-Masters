@@ -5,8 +5,4 @@
         h1.groups Groups
         main.specified_groups
           = group_box
-          = group_box
-          = group_box
-          = group_box
-          = group_box
-          = group_box
+          = teacher_group
