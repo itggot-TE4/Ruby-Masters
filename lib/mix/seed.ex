@@ -42,6 +42,7 @@ defmodule Mix.Tasks.Seed do
     Postgrex.query!(DB, "INSERT INTO groups(name, school_id) VALUES($1, $2)", ["TE3", 1], pool: DBConnection.ConnectionPool)
     Postgrex.query!(DB, "INSERT INTO groups(name, school_id) VALUES($1, $2)", ["TE2", 1], pool: DBConnection.ConnectionPool)
     Postgrex.query!(DB, "INSERT INTO groups(name, school_id) VALUES($1, $2)", ["TE17K", 2], pool: DBConnection.ConnectionPool)
+    Postgrex.query!(DB, "INSERT INTO groups(name, school_id) VALUES($1, $2)", ["TE18K", 2], pool: DBConnection.ConnectionPool)
 
     Postgrex.query!(DB, "INSERT INTO schools(name) VALUES($1)", ["NTI"], pool: DBConnection.ConnectionPool)
     Postgrex.query!(DB, "INSERT INTO schools(name) VALUES($1)", ["Elof"], pool: DBConnection.ConnectionPool)
