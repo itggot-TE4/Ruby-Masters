@@ -1,0 +1,26 @@
+.wrapper.general
+  = slime.("partials/header", [username: username])
+  main.general
+    main.general
+      h1.title Schools
+      main.specified_groups
+
+       = slime.("partials/school_groups_box", [name: name])
+        aside.two_buttons
+          aside.top
+            h1 NEW
+          aside.bot
+            h1 UPLOAD
+    
+          
+
+
+  
+  
+       
+        = slime.("partials/school_groups_box", [name: name])
+      /= slime.("partials/teacher_group", [])
+
+         
+
+

@@ -145,6 +145,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 90vh;
+  font-family: "Roboto", cursive;
 }
 
 .wrapper.general main.general h1 {
@@ -155,7 +156,6 @@ body {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  font-family: "Roboto", cursive;
   color: #81b214;
 }
 
@@ -178,6 +178,66 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.wrapper.general main.general main.specified_groups aside.two_buttons {
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrapper.general main.general main.specified_groups aside.two_buttons aside.top {
+  width: 100%;
+  height: 40%;
+  background-color: #bfdcae;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  top: 0px;
+}
+
+.wrapper.general main.general main.specified_groups aside.two_buttons aside.bot {
+  width: 100%;
+  height: 40%;
+  background-color: #bfdcae;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrapper.general main.general main.specified_groups aside.two_buttons h1 {
+  grid-row: span 2;
+  height: 100%;
+  width: 100%;
+  color: white;
+  font-size: 2em;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .wrapper.general main.general main.specified_groups aside.group h1, .wrapper.general main.general main.specified_groups aside.teacher_group h1 {
@@ -231,7 +291,8 @@ body {
   background-color: #81b214;
 }
 
-.wrapper.general main.general main.specified_groups aside.group .lower p, .wrapper.general main.general main.specified_groups aside.teacher_group .lower p {
+.wrapper.general main.general main.specified_groups aside.group .lower a, .wrapper.general main.general main.specified_groups aside.group .lower button, .wrapper.general main.general main.specified_groups aside.teacher_group .lower a, .wrapper.general main.general main.specified_groups aside.teacher_group .lower button {
+  text-decoration: none;
   width: 50%;
   height: 100%;
   display: -webkit-box;
@@ -244,6 +305,10 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: white;
+  border: none;
+  background-color: transparent;
+  font-family: "Roboto", cursive;
+  font-size: 1.1em;
 }
 
 .wrapper.general main.general main.specified_groups aside.group {
@@ -259,6 +324,18 @@ body {
 }
 
 .wrapper.general main.general main.specified_groups aside.teacher_group {
+  width: 200px;
+  height: 200px;
+  background-color: #bfdcae;
+  margin: 2vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 75% 25%;
+      grid-template-rows: 75% 25%;
+  font-family: "Roboto", cursive;
+}
+
+.wrapper.general main.general main.specified_groups aside.admin_group {
   width: 200px;
   height: 200px;
   background-color: #bfdcae;

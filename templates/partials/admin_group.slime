@@ -1,0 +1,5 @@
+aside.teacher_group
+        h2 Klassnamn
+        .lower
+            p Edit
+            p Remove

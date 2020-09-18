@@ -26,6 +26,7 @@ defmodule Pluggy.User do
 
     Postgrex.query!(DB, "INSERT INTO users (name, status, pwd) VALUES($1, $2, $ 3)", [username, "teacher", pwd], pool: DBConnection.ConnectionPool)
 
+    Enum.each(teachers, fn(teacher) -> to_struct(teacher) end)
   end
 
   def to_struct([[id, name]]) do

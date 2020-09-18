@@ -1,8 +1,8 @@
 .wrapper.general
     = slime.("partials/header", [username: username])
     main.general
-        main.general
-            = for school <- schools do
-                h1.title = school.name
-                main.specified_groups
-                    / = slime.("partials/")
+        = for school <- schools do
+            h1.title = school.name
+            main.specified_groups
+                = for group <- school.groups do
+                    = slime.("partials/school_groups_box", [name: group.name, id: group.id])

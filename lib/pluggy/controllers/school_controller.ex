@@ -10,6 +10,13 @@ defmodule Pluggy.SchoolController do
     redirect(conn, "/")
   end
 
+  def destroy(conn, params) do
+    IO.inspect(params)
+    id = String.to_integer(params["id"])
+    School.destroy(id)
+    redirect(conn, "/")
+  end
+
   def redirect(conn, url) do
     Plug.Conn.put_resp_header(conn, "location", url) |> send_resp(303, "")
   end
