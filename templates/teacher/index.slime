@@ -4,5 +4,5 @@
         main.general
             = for school <- schools do
                 h1.title = school.name
-                    main.specified_groups
-                        = slime.("partials/")
+                main.specified_groups
+                        / = slime.("partials/")

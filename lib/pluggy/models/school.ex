@@ -35,4 +35,9 @@ defmodule Pluggy.School do
       to_struct(school)
     end)
   end
+
+  def destroy(id) do
+    Postgrex.query!(DB, "DELETE FROM schools WHERE id = $1", [id], pool: DBConnection.ConnectionPool)
+    Postgrex.query!(DB, "DELETE FROM user_school_handler WHERE school_id = $1", [id], pool: DBConnection.ConnectionPool)
+  end
 end
