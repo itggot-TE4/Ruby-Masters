@@ -55,6 +55,8 @@ defmodule Pluggy.Router do
   get("/admin/groups", do: send_resp(conn, 200, srender("admin/schools", [username: conn.private.plug_session["user"].username, name: "123"])))
   post("/school/new", do: SchoolController.create(conn, conn.body_params))
 
+  post("/user/new", do: UserController.create(conn, conn.body_params))
+
   get("/teacher/class", do: send_resp(conn, 200, srender("partials/teacher_group", conn: conn)))
   get("/class/id", do: send_resp(conn, 200, srender("partials/admin_group", conn: conn)))
 
