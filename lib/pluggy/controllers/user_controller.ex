@@ -51,11 +51,16 @@ defmodule Pluggy.UserController do
 
   end
 
+
   def logout(conn) do
     Plug.Conn.configure_session(conn, drop: true) #tömmer sessionen
     |> redirect("/")
   end
 
+  def create(conn, params) do
+    User.create(conn, params)
+    redirect(conn, "/")
+  end
   # def create(conn, params) do
   # 	#pseudocode
   # 	# in db table users with password_hash CHAR(60)

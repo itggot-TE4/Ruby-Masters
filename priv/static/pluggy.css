@@ -332,7 +332,7 @@ header .name_box {
   color: white;
 }
 
-main.school_popup {
+main.school_popup, main.teacher_popup {
   height: 100vh;
   width: 100vw;
   position: absolute;
@@ -349,48 +349,7 @@ main.school_popup {
           align-items: center;
 }
 
-main.teacher_popup {
-
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.25);
-  top: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-
-}
-
-main.teacher_popup form {
-
-  width: 20%;
-  height: 20%;
-  background-color: white;
-  border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-
-}
-
-main.school_popup form {
+main.school_popup form, main.teacher_popup form {
   width: 20%;
   height: 20%;
   background-color: white;

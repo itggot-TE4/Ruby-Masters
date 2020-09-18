@@ -61,6 +61,8 @@ defmodule Pluggy.Router do
   post("/school/new", do: SchoolController.create(conn, conn.body_params))
   get("/school/class", do: send_resp(conn, 200, srender("partials/teacher_group", conn: conn)))
 
+  post("/user/new", do: UserController.create(conn, conn.body_params))
+
 
 
   match _ do

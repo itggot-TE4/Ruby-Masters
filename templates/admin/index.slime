@@ -8,6 +8,17 @@
                     = slime.("partials/school_groups_box", [name: school.name])
                 aside.group
                     h1 onclick="show_popup()" NEW
+            h1.title Teachers
+            main.specified_groups
+                = for teacher <- teachers do
+                    = slime.("partials/school_groups_box", [name: teacher.username])
+                aside.group
+                    h1 onclick="show_teacher_popup()" NEW
+main.teacher_popup.hidden
+    form action="/user/new" method="post"
+        input placeholder="Name" name="name"
+        input placeholder="Password" name="pwd"
+        button type="submit" Add new teacher
 main.school_popup.hidden
     form action="/school/new" method="post"
         input placeholder="School name" name="name"
