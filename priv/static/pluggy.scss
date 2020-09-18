@@ -132,15 +132,8 @@ body{
             display: flex;
             flex-wrap: wrap;
 
-            aside.group{
-                width: 200px;
-                height: 200px;
-                background-color:  #bfdcae;
-                margin: 2vw;
-                display: grid;
-                grid-template-rows: 75% 25%;
-                font-family: $main-font;
 
+            aside.group, aside.teacher_group{
                 h1{
                     grid-row: span 2;
                     height: 100%;
@@ -169,7 +162,7 @@ body{
                     align-items: center;
                     flex-direction: row;
                     background-color: #81b214;
-
+                
 
                     p{
                         width: 50%;
@@ -180,10 +173,32 @@ body{
                         color: white;
                     }
                 }
+           }
+
+            aside.group{
+                width: 200px;
+                height: 200px;
+                background-color:  #bfdcae;
+                margin: 2vw;
+                display: grid;
+                grid-template-rows: 75% 25%;
+                font-family: $main-font;
+            }
+
+            aside.teacher_group{
+                width: 200px;
+                height: 200px;
+                background-color: #bfdcae;
+                margin: 2vw;
+                display: grid;
+                grid-template-rows: 75% 25%;
+                font-family: $main-font; 
             }
         }
     }
 }
+
+
 
 header{
     height: 10vh;
