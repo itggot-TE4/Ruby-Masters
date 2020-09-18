@@ -18,6 +18,14 @@ defmodule Pluggy.School do
     %School{id: id, name: name}
   end
 
+  def to_struct([id, name]) do
+    %School{id: id, name: name}
+  end
 
+  def get_from_teacher(user_id) do
 
+    Enum.map(Postgrex.query!(DB, "SELECT school_id, b.name FROM user_school_handler AS a INNER JOIN schools AS b ON b.id = a.school_id INNER JOIN users AS u ON a.user_id = u.id WHERE u.id = $1;", [user_id], pool: DBConnection.ConnectionPool).rows, fn(school) ->
+      to_struct(school)
+    end)
+  end
 end

@@ -1,5 +1,5 @@
 aside.group
-    h2 Gruppnamn
+    h2 = name
     .lower
         p Edit
         p Remove
