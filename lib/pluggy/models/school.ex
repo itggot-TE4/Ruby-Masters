@@ -10,6 +10,8 @@ defmodule Pluggy.School do
     Postgrex.query!(DB, "INSERT INTO user_school_handler(user_id, school_id) VALUES($1, $2)", [user_id, school.id], pool: DBConnection.ConnectionPool)
 
   end
+
+
   def to_struct([[id]]) do
     %School{id: id}
   end

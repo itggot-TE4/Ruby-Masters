@@ -9,3 +9,12 @@ function show_popup(){
     wrapper.classList.toggle('blurred');
     popup.classList.toggle('hidden');
 }
+
+function show_teacher_popup(){
+    console.log('hej')
+    var popup = document.querySelector('main.teacher_popup');
+    var wrapper = document.querySelector('.wrapper');
+
+    wrapper.classList.toggle('blurred');
+    popup.classList.toggle('hidden');   
+}

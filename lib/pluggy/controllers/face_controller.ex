@@ -15,8 +15,9 @@ defmodule Pluggy.FaceController do
       nil -> redirect(conn, "/user/login")
       _ -> nil
     end
-
-    send_resp(conn, 200, srender("whats_their_face/index", [header: srender("partials/header", username: conn.private.plug_session["user"].username), school_box: srender("partials/school_groups_box", [])]))
+    teachers = User.get_teachers()
+    IO.inspect teachers
+    send_resp(conn, 200, srender("whats_their_face/index", [header: srender("partials/header", username: conn.private.plug_session["user"].username), school_box: srender("partials/school_groups_box", [name: "Steffe2"])]))
   end
 
   defp redirect(conn, url),
