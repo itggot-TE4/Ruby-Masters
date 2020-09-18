@@ -2,9 +2,7 @@
     = slime.("partials/header", [username: username])
     main.general
         main.general
-            h1.title SKOLNAMN
-            main.specified_groups
-                = for school <- schools do
-                    = slime.("partials/school_groups_box", [name: school.name])
-                aside.group
-                    h1 NEW
+            = for school <- schools do
+                h1.title = school.name
+                    main.specified_groups
+                        = slime.("partials/")

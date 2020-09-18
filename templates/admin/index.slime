@@ -1,10 +1,11 @@
 .wrapper.general
-    = header
+    = slime.("partials/header", [username: username])
     main.general
         main.general
             h1.title Schools
             main.specified_groups
-                = school_box
+                = for school <- schools do
+                    = slime.("partials/school_groups_box", [name: school.name])
                 aside.group
                     h1 onclick="show_popup()" NEW
 main.school_popup.hidden
