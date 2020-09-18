@@ -45,10 +45,13 @@ defmodule Pluggy.Router do
   # post("/users/logout", do: UserController.logout(conn))
 
   get("/", do: FaceController.index(conn))
+
   get("/user/login", do: send_resp(conn, 200, srender("users/new", conn: conn)))
   post("/user/login", do: UserController.login(conn, conn.body_params))
   post("/user/logout", do: UserController.logout(conn))
 
+  get("/school/index", do: SchoolController.show(conn))
+  
   get("/admin/groups", do: send_resp(conn, 200, srender("admin/groups", [
   header: srender("partials/header", [username: conn.private.plug_session["user"].username]),
   group_box: srender("partials/school_groups_box", []),
@@ -57,6 +60,8 @@ defmodule Pluggy.Router do
 
   post("/school/new", do: SchoolController.create(conn, conn.body_params))
   get("/school/class", do: send_resp(conn, 200, srender("partials/teacher_group", conn: conn)))
+
+
 
   match _ do
     send_resp(conn, 404, "oops")

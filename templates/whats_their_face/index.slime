@@ -14,9 +14,18 @@
             main.specified_groups
                 = school_box
                 aside.group
-                    h1 onclick="show_popup()" NEW
+                    h1 onclick="show_popup()" NEW   
+            h1.title teacher
+            main.specified_groups
+                = school_box
+                aside.group
+                    h1 onclick="show_teacher_popup()" NEW
 main.school_popup.hidden
     form action="/school/new" method="post"
         input placeholder="School name" name="name"
         button type="submit" Add new school
+main.teacher_popup.hidden
+    form action="/teacher/new" method="post"
+        input placeholder="teacher name" name="name"
+        button type="submit" Add new teacher
 

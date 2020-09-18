@@ -15,6 +15,14 @@ defmodule Pluggy.User do
     |> to_struct
   end
 
+  def get_teachers() do
+    teachers = Postgrex.query!(DB, "SELECT id, name FROM users WHERE status = $1", ["teacher"], pool: DBConnection.ConnectionPool).rows
+    Enum.each teachers, fn(teacher) ->
+
+    end
+    |> to_struct
+  end
+
   def to_struct([[id, username, pwd, status]]) do
     %User{id: id, username: username, pwd: pwd, status: status}
   end

@@ -13,4 +13,5 @@ defmodule Pluggy.SchoolController do
   def redirect(conn, url) do
     Plug.Conn.put_resp_header(conn, "location", url) |> send_resp(303, "")
   end
+
 end
