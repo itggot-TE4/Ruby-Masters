@@ -145,6 +145,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 90vh;
+  font-family: "Roboto", cursive;
 }
 
 .wrapper.general main.general h1 {
@@ -155,7 +156,6 @@ body {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  font-family: "Roboto", cursive;
   color: #81b214;
 }
 
@@ -291,7 +291,8 @@ body {
   background-color: #81b214;
 }
 
-.wrapper.general main.general main.specified_groups aside.group .lower p, .wrapper.general main.general main.specified_groups aside.teacher_group .lower p {
+.wrapper.general main.general main.specified_groups aside.group .lower a, .wrapper.general main.general main.specified_groups aside.group .lower button, .wrapper.general main.general main.specified_groups aside.teacher_group .lower a, .wrapper.general main.general main.specified_groups aside.teacher_group .lower button {
+  text-decoration: none;
   width: 50%;
   height: 100%;
   display: -webkit-box;
@@ -304,6 +305,10 @@ body {
       -ms-flex-align: center;
           align-items: center;
   color: white;
+  border: none;
+  background-color: transparent;
+  font-family: "Roboto", cursive;
+  font-size: 1.1em;
 }
 
 .wrapper.general main.general main.specified_groups aside.group {

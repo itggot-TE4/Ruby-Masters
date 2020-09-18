@@ -109,11 +109,11 @@ body{
         align-items: center;
         flex-direction: column;
         height: 90vh;
+        font-family: $main-font;
         h1{
             margin: 0;
             width: fit-content;
             height: fit-content;
-            font-family: $main-font;
             color: #81b214;
         }
 
@@ -176,6 +176,7 @@ body{
 
 
             aside.group, aside.teacher_group{
+                
                 h1{
                     grid-row: span 2;
                     height: 100%;
@@ -209,13 +210,18 @@ body{
                     background-color: #81b214;
                 
 
-                    p{
+                    a, button{
+                        text-decoration: none;
                         width: 50%;
                         height: 100%;
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         color: white;
+                        border: none;
+                        background-color: transparent;
+                        font-family: $main-font;
+                        font-size: 1.1em;
                     }
                 }
            }
@@ -254,7 +260,6 @@ body{
         }
     }
 }
-
 
 header{
     height: 10vh;
