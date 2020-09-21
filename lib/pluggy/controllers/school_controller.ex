@@ -11,7 +11,6 @@ defmodule Pluggy.SchoolController do
   end
 
   def destroy(conn, params) do
-    IO.inspect(params)
     id = String.to_integer(params["id"])
     School.destroy(id)
     redirect(conn, "/")

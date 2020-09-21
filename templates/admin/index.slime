@@ -11,7 +11,7 @@
             h1.title Teachers
             main.specified_groups
                 = for teacher <- teachers do
-                    = slime.("partials/school_groups_box", [name: teacher.username])
+                    = slime.("partials/school_groups_box", [name: teacher.username, id: nil])
                 aside.group
                     h1 onclick="show_teacher_popup()" NEW
 main.teacher_popup.hidden

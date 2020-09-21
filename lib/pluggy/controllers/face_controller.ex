@@ -19,12 +19,11 @@ defmodule Pluggy.FaceController do
 
     if session_user.status == "admin" do
       teachers = User.get_teachers()
-
+      IO.inspect(teachers)
       schools = School.get_from_admin()
-      send_resp(conn, 200, srender("admin/index", [schools: schools,teachers: teachers, username: conn.private.plug_session["user"].username]))
+      send_resp(conn, 200, srender("admin/index", [schools: schools, teachers: teachers, username: conn.private.plug_session["user"].username]))
     else
       schools = School.get_from_teacher(session_user.id)
-      IO.inspect(schools)
       send_resp(conn, 200, srender("teacher/index", [schools: schools, username: conn.private.plug_session["user"].username]))
     end
   end
