@@ -18,3 +18,8 @@ function show_teacher_popup(){
     wrapper.classList.toggle('blurred');
     popup.classList.toggle('hidden');   
 }
+
+function group_popup(){
+    var parent = document.querySelector("main.group_popup");
+    parent.classList.toggle('hidden');
+}
