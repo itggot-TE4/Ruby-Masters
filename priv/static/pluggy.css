@@ -194,6 +194,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin: 2vw;
 }
 
 .wrapper.general main.general main.specified_groups aside.two_buttons aside.top {

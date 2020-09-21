@@ -7,6 +7,7 @@ defmodule Pluggy.Router do
   alias Pluggy.UserController
   alias Pluggy.FaceController
   alias Pluggy.SchoolController
+  alias Pluggy.GroupController
   import Pluggy.Template, only: [render: 2, srender: 2]
 
 
@@ -52,7 +53,7 @@ defmodule Pluggy.Router do
 
   get("/school/index", do: SchoolController.show(conn))
 
-  get("/admin/groups", do: send_resp(conn, 200, srender("admin/schools", [username: conn.private.plug_session["user"].username, name: "123"])))
+  get("/admin/groups/:id", do: GroupController.edit(conn))
   post("/school/new", do: SchoolController.create(conn, conn.body_params))
 
   post("/user/new", do: UserController.create(conn, conn.body_params))
