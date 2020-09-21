@@ -1,6 +1,6 @@
 aside.group
     h2 = name
     .lower
-        a href="/class/#{id}" Edit
+        a href="/admin/groups/#{id}" Edit
         form action="/school/destroy" method="post"
             button type="submit" name="id" value="#{id}" Remove
