@@ -13,7 +13,18 @@
             h1 NEW
           aside.bot
             h1 UPLOAD
+
+      h1.title Teachers
+           
+      main.specified_groups
+        = slime.("partials/teacher_image", [name: "hej"])
+
+        aside.group
+          h1 NEW
+
+       
     
+
           
 
 
