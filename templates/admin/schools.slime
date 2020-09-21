@@ -6,7 +6,7 @@
       h1.title Groups
       main.specified_groups
         = for group <- data.groups do
-          = slime.("partials/school_groups_box", [name: group.name, id: nil])
+          = slime.("partials/school_groups_box", [name: group.name, id: nil, edit_route: "/admin/group/#{group.id}", destroy_route: ""])
          
         aside.two_buttons
           aside.top
