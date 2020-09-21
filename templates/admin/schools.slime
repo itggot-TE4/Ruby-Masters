@@ -2,10 +2,12 @@
   = slime.("partials/header", [username: username])
   main.general
     main.general
-      h1.title Schools
+      h1.title = data.name
+      h1.title Groups
       main.specified_groups
-
-       = slime.("partials/school_groups_box", [name: name])
+        = for group <- data.groups do
+          = slime.("partials/school_groups_box", [name: group.name, id: nil])
+         
         aside.two_buttons
           aside.top
             h1 NEW
@@ -18,7 +20,7 @@
   
   
        
-        = slime.("partials/school_groups_box", [name: name])
+        / = slime.("partials/school_groups_box", [name: name, id: nil])
       /= slime.("partials/teacher_group", [])
 
          

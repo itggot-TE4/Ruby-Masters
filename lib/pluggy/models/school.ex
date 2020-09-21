@@ -20,6 +20,10 @@ defmodule Pluggy.School do
     %School{id: id, name: name}
   end
 
+  def to_struct(id, name, list) do
+    %School{id: id, name: name, groups: list}
+  end
+
   def to_struct([id, name], list) do
     %School{id: id, name: name, groups: list}
   end
