@@ -413,7 +413,7 @@ header .name_box {
   color: white;
 }
 
-main.school_popup, main.teacher_popup {
+main.school_popup, main.teacher_popup, main.group_popup {
   height: 100vh;
   width: 100vw;
   position: absolute;
@@ -430,7 +430,7 @@ main.school_popup, main.teacher_popup {
           align-items: center;
 }
 
-main.school_popup form, main.teacher_popup form {
+main.school_popup form, main.teacher_popup form, main.group_popup form {
   width: 20%;
   height: 20%;
   background-color: white;

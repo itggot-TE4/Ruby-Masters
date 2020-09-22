@@ -20,6 +20,7 @@ function show_teacher_popup(){
 }
 
 function group_popup(){
+    // console.log('123')
     var parent = document.querySelector("main.group_popup");
     parent.classList.toggle('hidden');
 }

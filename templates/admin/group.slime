@@ -5,13 +5,14 @@
         h2 = data.group_name
         main.specified_groups
             = for student <- data.students do
-                = slime.("partials/school_groups_box", [name: student.name, id: nil, edit_route: "", destroy_route: ""])
+                = slime.("partials/school_groups_box", [name: student.name, id: student.id, edit_route: "", destroy_route: "/student/destroy"])
             aside.two_buttons
                 aside.top
                     h1 onclick="group_popup()" NEW
                 aside.bot
                     h1 UPLOAD
 main.group_popup.hidden
-    form action="/group/new" method="post"
-        input placeholder="Group name" name="name"
-        button type="submit" Add new group
+    form action="/group/new_student" method="post"
+        input placeholder="Student name" name="name"
+        input placeholder="Img tag" name="img"
+        button type="submit" name="group_id" value="#{data.group_id}" Add new student!
