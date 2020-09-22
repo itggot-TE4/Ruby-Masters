@@ -43,7 +43,10 @@ defmodule Pluggy.UserController do
     pwd = params["password"]
     user = User.get_by_username(username)
 
-    if user.pwd == pwd do
+    
+
+
+    if Bcrypt.verify_pass(pwd, user.pwd) do
       Plug.Conn.put_session(conn, :user, user) |> redirect("/")
     else
       Plug.Conn.put_session(conn, :incorrect_login_info, true) |> redirect("/user/login")

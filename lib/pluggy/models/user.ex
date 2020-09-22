@@ -24,9 +24,11 @@ defmodule Pluggy.User do
     username = params["name"]
     pwd = params["pwd"]
 
-    teachers = Postgrex.query!(DB, "INSERT INTO users (name, status, pwd) VALUES($1, $2, $3);", [username, "teacher", pwd], pool: DBConnection.ConnectionPool).rows
+    pwd_hash = Bcrypt.Base.hash_password(pwd, Bcrypt.gen_salt(12, true))
 
-    Enum.each(teachers, fn(teacher) -> to_struct(teacher) end)
+    teachers = Postgrex.query!(DB, "INSERT INTO users (name, status, pwd) VALUES($1, $2, $3);", [username, "teacher", pwd_hash], pool: DBConnection.ConnectionPool).rows
+
+
   end
 
   def to_struct([[id, name]]) do
