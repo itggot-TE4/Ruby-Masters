@@ -59,6 +59,7 @@ defmodule Pluggy.Router do
 
   get("/teacher/class", do: send_resp(conn, 200, srender("partials/teacher_group", conn: conn)))
   get("/class/id", do: send_resp(conn, 200, srender("partials/admin_group", conn: conn)))
+  post("/user/destroy", do: UserController.remove(conn, conn.body_params))
 
   get("/school/class", do: send_resp(conn, 200, srender("partials/teacher_group", conn: conn)))
   post("/school/destroy", do: SchoolController.destroy(conn, conn.body_params))
