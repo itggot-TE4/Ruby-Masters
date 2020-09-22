@@ -3,5 +3,5 @@ header
     i.material-icons person
     .name_box
         h3 = username
-    form.user_action action="user/logout" method="post"
+    form.user_action action="/user/logout" method="post"
         button type="submit" Logout

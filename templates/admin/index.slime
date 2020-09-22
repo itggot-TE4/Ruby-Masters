@@ -5,13 +5,13 @@
             h1.title Schools
             main.specified_groups
                 = for school <- schools do
-                    = slime.("partials/school_groups_box", [name: school.name, id: school.id])
+                    = slime.("partials/school_groups_box", [name: school.name, id: school.id, edit_route: "/admin/school/#{school.id}", destroy_route: ""])
                 aside.group
                     h1 onclick="show_popup()" NEW
             h1.title Teachers
             main.specified_groups
                 = for teacher <- teachers do
-                    = slime.("partials/school_groups_box", [name: teacher.username, id: teacher.id])
+                    = slime.("partials/school_groups_box", [name: teacher.username, id: teacher.id, edit_route: "", destroy_route: ""])
                 aside.group
                     h1 onclick="show_teacher_popup()" NEW
 main.teacher_popup.hidden

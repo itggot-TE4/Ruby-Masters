@@ -141,7 +141,7 @@ body{
              display: flex;
              flex-direction: column;
              justify-content: space-between;
-
+             margin: 2vw;
                 aside.top{
                     width: 100%;
                     height: 40%;
@@ -160,6 +160,7 @@ body{
                 
                 }
                 h1{
+                    font-family: $main-font;
                     grid-row: span 2;
                     height: 100%;
                     width: 100%;
@@ -169,7 +170,8 @@ body{
                     display: flex;
                     justify-content: center;
                     align-items: center;
-
+                    background-color: #bfdcae;
+                    border: none;
                 }
 
             }
