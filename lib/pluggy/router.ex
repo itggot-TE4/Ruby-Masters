@@ -7,6 +7,7 @@ defmodule Pluggy.Router do
   alias Pluggy.UserController
   alias Pluggy.FaceController
   alias Pluggy.SchoolController
+  alias Pluggy.StudentController
   alias Pluggy.GroupController
   import Pluggy.Template, only: [render: 2, srender: 2]
 
@@ -44,15 +45,16 @@ defmodule Pluggy.Router do
 
   get("/teacher/class", do: send_resp(conn, 200, srender("partials/teacher_group", conn: conn)))
   get("/class/id", do: send_resp(conn, 200, srender("partials/admin_group", conn: conn)))
+  post("/user/destroy", do: UserController.remove(conn, conn.body_params))
   get("/admin/groups/1", do: send_resp(conn, 200, srender("partials/teacher_image", conn: conn)))
-
 
   get("/school/class", do: send_resp(conn, 200, srender("partials/teacher_group", conn: conn)))
   post("/school/destroy", do: SchoolController.destroy(conn, conn.body_params))
 
   get("/admin/group/:id", do: GroupController.index(conn))
 
-  post("/group/create", do: GroupController.create(conn))
+  post("/group/new_student", do: GroupController.add_student_to_group(conn))
+  post("/student/destroy", do: StudentController.destroy(conn))
 
   match _ do
     send_resp(conn, 404, "oops")

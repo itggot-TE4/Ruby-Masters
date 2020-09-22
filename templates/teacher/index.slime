@@ -5,4 +5,4 @@
             h1.title = school.name
             main.specified_groups
                 = for group <- school.groups do
-                    = slime.("partials/school_groups_box", [name: group.name, id: group.id])
+                    = slime.("partials/school_groups_box", [name: group.name, id: group.id, edit_route: "", destroy_route: ""])

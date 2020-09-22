@@ -8,4 +8,4 @@ html
     body
     = template
 
-    script src="../js/main.js"
+    script src="../../js/main.js"

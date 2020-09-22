@@ -60,6 +60,10 @@ defmodule Pluggy.UserController do
     |> redirect("/")
   end
 
+  def remove(conn, params) do
+    
+  end
+
   def create(conn, params) do
     User.create(conn, params)
     redirect(conn, "/")
