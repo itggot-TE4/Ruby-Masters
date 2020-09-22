@@ -24,8 +24,8 @@ defmodule Pluggy.GroupController do
     send_resp(conn, 200, srender("admin/group", [username: username, data: group_data]))
   end
 
-  def create(conn) do
-    IO.inspect(conn)
+  def add_student_to_group(conn) do
+    User.create_and_add_to_group(conn)
     redirect(conn, "/admin/school/1")
   end
 

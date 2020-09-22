@@ -29,6 +29,14 @@ defmodule Pluggy.User do
     Enum.each(teachers, fn(teacher) -> to_struct(teacher) end)
   end
 
+  def create_and_add_to_group(conn) do
+    name = conn.params["name"]
+    group_id = conn.params["group_id"]
+    img = conn.params["img"]
+    [[student_id]] = Postgrex.query!(DB, "INSERT INTO students(name, img) VALUES($1, $2) RETURNING id;", [name, img], pool: DBConnection.ConnectionPool).rows
+    Postgrex.query!(DB, "INSERT INTO student_group_handler(student_id, group_id) VALUES($1, $2)", [student_id, String.to_integer(group_id)], pool: DBConnection.ConnectionPool)
+  end
+
   def to_struct([[id, name]]) do
     %User{id: id, username: name}
   end

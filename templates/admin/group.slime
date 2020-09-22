@@ -12,6 +12,7 @@
                 aside.bot
                     h1 UPLOAD
 main.group_popup.hidden
-    form action="/group/new" method="post"
-        input placeholder="Group name" name="name"
-        button type="submit" Add new group
+    form action="/group/new_student" method="post"
+        input placeholder="Student name" name="name"
+        input placeholder="Img tag" name="img"
+        button type="submit" name="group_id" value="#{data.group_id}" Add new group

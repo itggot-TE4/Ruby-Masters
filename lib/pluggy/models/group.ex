@@ -34,12 +34,12 @@ defmodule Pluggy.Group do
     id = String.to_integer(conn.path_params["id"])
     student_data = Postgrex.query!(DB, "SELECT students.*, groups.name FROM student_group_handler INNER JOIN groups ON groups.id = group_id INNER JOIN students ON students.id = student_id WHERE group_id = $1;", [id], pool: DBConnection.ConnectionPool).rows
 
-    [[school_id | [school_name | [_ | [group_name | _]]]] | _] = Postgrex.query!(DB, "SELECT *, groups.name FROM schools INNER JOIN groups ON groups.school_id = schools.id WHERE groups.id = $1;", [id], pool: DBConnection.ConnectionPool).rows
+    [[school_id, school_name, group_name, group_id]] = Postgrex.query!(DB, "SELECT schools.id, schools.name, groups.name, groups.id FROM schools INNER JOIN groups ON groups.school_id = schools.id WHERE groups.id = $1;", [id], pool: DBConnection.ConnectionPool).rows
     student_list = Enum.map(student_data, fn(student) ->
       Student.to_struct(student)
     end)
 
-    %{group_name: group_name, school_id: school_id, school_name: school_name, students: student_list}
+    %{group_name: group_name, school_id: school_id, school_name: school_name, students: student_list, group_id: group_id}
   end
   def to_struct([id, name]) do
     %Group{id: id, name: name}
