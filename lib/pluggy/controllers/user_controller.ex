@@ -5,6 +5,7 @@ defmodule Pluggy.UserController do
 
   alias Pluggy.Fruit
   alias Pluggy.User
+  alias Pluggy.ApplicationController
   import Pluggy.Template, only: [render: 2, srender: 2]
   import Plug.Conn, only: [send_resp: 3]
 
@@ -43,9 +44,6 @@ defmodule Pluggy.UserController do
     pwd = params["password"]
     user = User.get_by_username(username)
 
-    
-
-
     if Bcrypt.verify_pass(pwd, user.pwd) do
       Plug.Conn.put_session(conn, :user, user) |> redirect("/")
     else
@@ -54,14 +52,14 @@ defmodule Pluggy.UserController do
 
   end
 
-
   def logout(conn) do
     Plug.Conn.configure_session(conn, drop: true) #tömmer sessionen
     |> redirect("/")
   end
 
-  def remove(conn, params) do
-    
+  def destroy(conn) do
+    User.destroy(conn)
+    ApplicationController.redirect(conn, ApplicationController.go_back(conn.req_headers))
   end
 
   def create(conn, params) do

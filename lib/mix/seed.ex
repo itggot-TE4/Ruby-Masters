@@ -34,9 +34,9 @@ defmodule Mix.Tasks.Seed do
   defp seed_data() do
     IO.puts("Seeding data")
 
-    Postgrex.query!(DB, "INSERT INTO users(name, status, pwd) VALUES($1, $2, $3)", ["Admin", "admin", "123"], pool: DBConnection.ConnectionPool)
-    Postgrex.query!(DB, "INSERT INTO users(name, status, pwd) VALUES($1, $2, $3)", ["Filip", "teacher", "hej"], pool: DBConnection.ConnectionPool)
-    Postgrex.query!(DB, "INSERT INTO users(name, status, pwd) VALUES($1, $2, $3)", ["Alex", "teacher", "hej"], pool: DBConnection.ConnectionPool)
+    Postgrex.query!(DB, "INSERT INTO users(name, status, pwd) VALUES($1, $2, $3)", ["Admin", "admin", Bcrypt.Base.hash_password("123", Bcrypt.gen_salt(12, true))], pool: DBConnection.ConnectionPool)
+    Postgrex.query!(DB, "INSERT INTO users(name, status, pwd) VALUES($1, $2, $3)", ["Filip", "teacher", Bcrypt.Base.hash_password("123", Bcrypt.gen_salt(12, true))], pool: DBConnection.ConnectionPool)
+    Postgrex.query!(DB, "INSERT INTO users(name, status, pwd) VALUES($1, $2, $3)", ["Alex", "teacher", Bcrypt.Base.hash_password("123", Bcrypt.gen_salt(12, true))], pool: DBConnection.ConnectionPool)
 
     Postgrex.query!(DB, "INSERT INTO groups(name, school_id) VALUES($1, $2)", ["TE4", 1], pool: DBConnection.ConnectionPool)
     Postgrex.query!(DB, "INSERT INTO groups(name, school_id) VALUES($1, $2)", ["TE3", 1], pool: DBConnection.ConnectionPool)

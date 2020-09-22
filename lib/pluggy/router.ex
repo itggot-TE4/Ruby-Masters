@@ -56,6 +56,8 @@ defmodule Pluggy.Router do
   post("/group/new_student", do: GroupController.add_student_to_group(conn))
   post("/student/destroy", do: StudentController.destroy(conn))
 
+  post("/teacher/destroy", do: UserController.destroy(conn))
+
   match _ do
     send_resp(conn, 404, "oops")
   end
