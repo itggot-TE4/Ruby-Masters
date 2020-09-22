@@ -47,8 +47,12 @@ defmodule Pluggy.Router do
   get("/admin/groups/1", do: send_resp(conn, 200, srender("partials/teacher_image", conn: conn)))
 
 
+
   get("/school/class", do: send_resp(conn, 200, srender("partials/teacher_group", conn: conn)))
   post("/school/destroy", do: SchoolController.destroy(conn, conn.body_params))
+
+  get("/teacher/guess", do: send_resp(conn, 200, srender("admin/teacher_guess", conn: conn)))
+
 
   get("/admin/group/:id", do: GroupController.index(conn))
 

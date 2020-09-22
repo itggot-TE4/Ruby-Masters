@@ -180,6 +180,146 @@ body {
       flex-wrap: wrap;
 }
 
+.wrapper.general main.general main.specified_groups aside.guess {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrapper.general main.general main.specified_groups aside.guess h3 {
+  grid-row: span 2;
+  height: 100%;
+  width: 100%;
+  color: #bfdcae;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper.general main.general main.specified_groups aside.guess aside.box {
+  width: 50%;
+  height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper.general main.general main.specified_groups aside.guess aside.box aside.image_box {
+  width: 60%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper.general main.general main.specified_groups aside.guess aside.box aside.image_box aside.image {
+  width: 100%;
+  height: 80%;
+  background-color: green;
+  border-radius: 3px;
+}
+
+.wrapper.general main.general main.specified_groups aside.guess aside.box aside.image_box aside.score {
+  width: 100%;
+  height: 20%;
+}
+
+.wrapper.general main.general main.specified_groups aside.guess aside.box aside.right {
+  width: 40%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper.general main.general main.specified_groups aside.guess aside.box aside.right aside.next_box {
+  width: 100%;
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper.general main.general main.specified_groups aside.guess aside.box aside.right aside.next_box aside.next {
+  width: 90%;
+  height: 50%;
+  background-color: #bfdcae;
+  border-radius: 3px;
+}
+
+.wrapper.general main.general main.specified_groups aside.guess aside.box aside.right aside.next_box aside.next h3 {
+  color: white;
+}
+
+.wrapper.general main.general main.specified_groups aside.guess aside.box aside.right aside.name_box {
+  width: 100%;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper.general main.general main.specified_groups aside.guess aside.box aside.right aside.name_box aside.name {
+  width: 90%;
+  height: 50px;
+  background-color: #bfdcae;
+  border-radius: 3px;
+}
+
+.wrapper.general main.general main.specified_groups aside.guess aside.box aside.right aside.name_box aside.name h5 {
+  grid-row: span 2;
+  height: 100%;
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .wrapper.general main.general main.specified_groups aside.two_buttons {
   width: 200px;
   height: 200px;

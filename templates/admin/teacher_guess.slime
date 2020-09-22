@@ -1,0 +1,36 @@
+.wrapper.general
+    main.general
+        h1.title Skolnamn
+        main.specified_groups
+
+            aside.guess
+                aside.box
+
+                    aside.image_box
+                        aside.image
+                        aside.score
+                            h3 10 OF 20 CORRECT
+                    
+
+                    aside.right
+                        aside.name_box
+                            aside.name 
+                                h5 Namn Namnsson
+                            aside.name
+                                h5 Namn Namnsson
+                            aside.name
+                                h5 Namn Namnsson
+                            aside.name
+                                h5 Namn Namnsson
+                            aside.name
+                                h5 Namn Namnsson
+
+                        aside.next_box
+                            aside.next
+                                h3 NEXT ->
+                        
+                       
+                     
+                    
+              
+
