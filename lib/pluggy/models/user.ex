@@ -26,6 +26,9 @@ defmodule Pluggy.User do
     
     Postgrex.query!(DB, "INSERT INTO users (name, status, pwd) VALUES($1, $2, $3);", [username, "teacher", pwd], pool: DBConnection.ConnectionPool).rows
 
+    pwd_hash = Bcrypt.Base.hash_password(pwd, Bcrypt.gen_salt(12, true))
+
+    teachers = Postgrex.query!(DB, "INSERT INTO users (name, status, pwd) VALUES($1, $2, $3);", [username, "teacher", pwd_hash], pool: DBConnection.ConnectionPool).rows
   end
 
   def create_and_add_to_group(conn) do
