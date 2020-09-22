@@ -5,7 +5,7 @@
             h1.title Schools
             main.specified_groups
                 = for school <- schools do
-                    = slime.("partials/school_groups_box", [name: school.name, id: school.id, edit_route: "/admin/school/#{school.id}", destroy_route: ""])
+                    = slime.("partials/school_groups_box", [name: school.name, id: school.id, edit_route: "/admin/school/#{school.id}", destroy_route: "/school/destroy"])
                 aside.group
                     h1 onclick="show_popup()" NEW
             h1.title Teachers

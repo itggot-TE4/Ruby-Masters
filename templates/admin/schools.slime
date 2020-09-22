@@ -22,18 +22,6 @@
         aside.group
           h1 NEW
 
-       
-    
-
-          
-
-
-  
-  
-       
-        / = slime.("partials/school_groups_box", [name: name, id: nil])
-      /= slime.("partials/teacher_group", [])
-
          
 
 

@@ -33,6 +33,7 @@ defmodule Pluggy.User do
     name = conn.params["name"]
     group_id = conn.params["group_id"]
     img = conn.params["img"]
+
     [[student_id]] = Postgrex.query!(DB, "INSERT INTO students(name, img) VALUES($1, $2) RETURNING id;", [name, img], pool: DBConnection.ConnectionPool).rows
     Postgrex.query!(DB, "INSERT INTO student_group_handler(student_id, group_id) VALUES($1, $2)", [student_id, String.to_integer(group_id)], pool: DBConnection.ConnectionPool)
   end

@@ -6,9 +6,9 @@ defmodule Pluggy.GroupController do
   alias Pluggy.User
   alias Pluggy.Group
   alias Pluggy.School
+  alias Pluggy.ApplicationController
   import Pluggy.Template, only: [render: 2, srender: 2]
   import Plug.Conn, only: [send_resp: 3]
-  import Pluggy.FaceController
   alias Pluggy.FaceController
 
   def edit(conn) do
@@ -26,9 +26,11 @@ defmodule Pluggy.GroupController do
 
   def add_student_to_group(conn) do
     User.create_and_add_to_group(conn)
-    redirect(conn, "/admin/school/1")
+    IO.inspect("#########")
+    link = ApplicationController.go_back(conn.req_headers)
+    IO.inspect(link)
+    ApplicationController.redirect(conn, link)
   end
 
-  defp redirect(conn, url),
-    do: Plug.Conn.put_resp_header(conn, "location", url) |> send_resp(303, "")
+
 end
